@@ -1,3 +1,7 @@
+var subMatches = false;
+var subLastMatchKey = "2019migib_qm23";
+var subNextMatchKey = "2019migib_qm30";
+
 function doOnLoad() {
     var streamUrl = getSetting("stream");
     if (streamUrl != null) {
@@ -34,7 +38,11 @@ function loadRank(data) {
 }
 
 function loadLastMatch(data) {
-    var lastMatchKey = data.last_match_key;
+    if (subMatches) {
+        var lastMatchKey = subLastMatchKey;
+    } else {
+        var lastMatchKey = data.last_match_key;
+    }
     if (lastMatchKey != null) {
         $.ajax({
             type: "GET",
@@ -69,7 +77,11 @@ function loadLastMatch(data) {
 }
 
 function loadNextMatch(data) {
-    var nextMatchKey = data.next_match_key;
+    if (subMatches) {
+        var nextMatchKey = subNextMatchKey;
+    } else {
+        var nextMatchKey = data.next_match_key;
+    }
     if (nextMatchKey != null) {
         $.ajax({
             type: "GET",
