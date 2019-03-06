@@ -33,98 +33,122 @@
         
         <div class="container-fluid p-5">
             <div class="row">
-                <div class="col-xl-6 pr-5">
+                <div class="col-6 pr-5">
                     <div class="row">
-                        <div class="col-lg-12 p-3 bg-light border rounded">
+                        <div class="col-12 p-3 bg-light border rounded">
                             <h4 class="pb-1">Last Match</h4>
                             <div class="row">
-                                <div class="col-md-6">
-                                    <table class="table">
+                                <div class="col-6">
+                                    <table class="table table-striped border">
                                         <thead>
                                             <tr>
-                                                <td class="text-light bg-danger" scope="col">Red</td>
-                                                <td class="text-light bg-primary" scope="col">Blue</td>
+                                                <th class="text-light bg-danger" scope="col">Red</th>
+                                                <th class="text-light bg-primary" scope="col">Blue</th>
                                             </tr>
                                         </thead>
-                                        <tbody class="bg-white">
+                                        <tbody>
                                             <tr>
                                                 <td id="lastRed1">0</td>
-                                                <td id="lastBlu1">0</td>
+                                                <td id="lastBlue1">0</td>
                                             </tr>
                                             <tr>
                                                 <td id="lastRed2">0</td>
-                                                <td id="lastBlu1">0</td>
+                                                <td id="lastBlue2">0</td>
                                             </tr>
                                             <tr>
                                                 <td id="lastRed3">0</td>
-                                                <td id="lastBlu3">0</td>
+                                                <td id="lastBlue3">0</td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="col-md-6">
-                                    Point Count
+                                <div class="col-6" id="lastInfo">
+                                    <h1 class="display-3 text-center pb-2">
+                                        <span id="lastRedScore" class="text-danger">0</span>
+                                        &#45;
+                                        <span id="lastBlueScore" class="text-primary">0</span>
+                                    </h1>
+                                    <p style="font-size: 20px;">
+                                        <strong>Number:</strong> <span id="lastMatchNumber"></span><br>
+                                        <strong>Time:</strong> <span id="lastTime"></span><br>
+                                        <strong>Winner: </strong> <span id="lastWinRed" class="d-none text-danger">Red</span><span id="lastWinBlue" class="d-none text-primary">Blue</span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row mt-5">
-                        <div class="col-md-5 mr-5 p-3 bg-light border rounded">
+                    <div class="row mt-4">
+                        <div class="col-5 mr-5 p-3 bg-light border rounded">
                             <h4 class="pb-1">Ranking</h4>
                             <h1 class="display-1" id="ranking">0</h1>
                         </div>
-                        <div class="col-md-6 p-3 bg-light border rounded">
-                            <h4 class="pb-1">Next Match (<span id="time">00:00</span>)</h4>
-                            <table class="table">
+                        <div class="col-6 p-3 bg-light border rounded">
+                            <h4 class="pb-1">Next Match</h4>
+                            <table class="table table-striped border table-sm">
                                 <thead>
                                     <tr>
-                                        <td class="text-light bg-danger" scope="col">Red</td>
-                                        <td class="text-light bg-primary" scope="col">Blue</td>
+                                        <th class="text-light bg-danger" scope="col">Red</th>
+                                        <th class="text-light bg-primary" scope="col">Blue</th>
                                     </tr>
                                 </thead>
-                                <tbody class="bg-white">
+                                <tbody>
                                     <tr>
                                         <td id="nextRed1">0</td>
-                                        <td id="nextBlu1">0</td>
+                                        <td id="nextBlue1">0</td>
                                     </tr>
                                     <tr>
                                         <td id="nextRed2">0</td>
-                                        <td id="nextBlu1">0</td>
+                                        <td id="nextBlue2">0</td>
                                     </tr>
                                     <tr>
                                         <td id="nextRed3">0</td>
-                                        <td id="nextBlu3">0</td>
+                                        <td id="nextBlue3">0</td>
                                     </tr>
                                 </tbody>
                             </table>
+                            <p style="font-size: 20px;" class="mb-n1">
+                                <strong>Number:</strong> <span id="nextMatchNumber"></span><br>
+                                <strong>Time:</strong> <span id="nextTime"></span>
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-6">
+                <div class="col-6">
                     <div class="row">
-                        <div class="col-lg-12 p-3 bg-light border rounded">
+                        <div class="col-12 p-3 bg-light border rounded">
                             <h4 class="pb-1">Stream</h4>
-                            <video src="" class="centered bg-white rounded">No stream selected.</video>
+                            <iframe id="streamFrame" src="/txt/nostream.txt" style="display: block; border: none; height: 300px;" class="w-100"></iframe>
                         </div>
                     </div>
-                    <div class="row p-3 mt-5 bg-light border rounded">
-                        <div class="col-sm-2">
-                            Sponser
-                        </div>
-                        <div class="col-sm-2">
-                            Sponser
-                        </div>
-                        <div class="col-sm-2">
-                            Sponser
-                        </div>
-                        <div class="col-sm-2">
-                            Sponser
-                        </div>
-                        <div class="col-sm-2">
-                            Sponser
-                        </div>
-                        <div class="col-sm-2">
-                            Sponser
+                    <div class="row p-3 mt-4 bg-light border rounded">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img src="/img/sponsers/1.png" class="w-100 d-inline-block align-center">
+                                </div>
+                                <div class="col-3">
+                                    <img src="/img/sponsers/2.png" class="w-100 d-inline-block align-center">
+                                </div>
+                                <div class="col-6">
+                                    <img src="/img/sponsers/3.png" class="w-100 d-inline-block align-center">
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-3">
+                                    <img src="/img/sponsers/4.png" class="w-100 d-inline-block align-center">
+                                </div>
+                                <div class="col-6">
+                                    <img src="/img/sponsers/5.png" class="w-100 d-inline-block align-center">
+                                </div>
+                                <div class="col-3">
+                                    <img src="/img/sponsers/6.png" class="w-100 d-inline-block align-center">
+                                </div>
+                            </div>
+                            <div class="row mt-n1">
+                                <div class="col12 text-center">
+                                    <img src="/img/sponsers/7.png" class="w-25 d-inline-block align-center">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -135,6 +159,14 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        
+        <!-- Custom JS -->
+        <script src="/js/settings.js"></script>
+        <script src="/js/tba.js"></script>
+        <script src="/js/tbaloader.js"></script>
     
     </body>
     
