@@ -12,6 +12,7 @@ settingDB["teamkey"] = "frc5980";
 
 // Event key (like "2019wmi" for example):
 settingDB["eventkey"] = "2019misjo";
+// settingDB["eventkey"] = "2018miwmi";
 
 // Stream URL:
 settingDB["stream"] = null;
