@@ -1,1 +1,7 @@
-/* Common.css */
+.no-cursor {
+    cursor: none;
+}
+
+.force-cursor {
+    cursor: default !important;
+}
