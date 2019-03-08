@@ -56,7 +56,7 @@ function loadTopRanks() {
             if (data != null) {
                 for (var i=0; i<8; i++) {
                     document.getElementById("rankTeam"+(i+1).toString()).innerHTML = rankData[i].team_key.toString().replace("frc", "");
-                    if (rankData[i].team_key.toString().replace("frc", "") == "5980") {
+                    if (rankData[i].team_key.toString().replace("frc", "") == getSetting("teamkey").toString().replace("frc", "")) {
                         document.getElementById("rowTeam"+(i+1).toString()).style = "background-color: lightgreen;";
                     } else {
                         document.getElementById("rowTeam"+(i+1).toString()).style = "";
@@ -82,13 +82,25 @@ function loadLastMatch(data) {
                 document.getElementById("lastRedScore").innerHTML = data.alliances.red.score.toString();
                 document.getElementById("lastBlueScore").innerHTML = data.alliances.blue.score.toString();
                 
-                document.getElementById("lastRed1").innerHTML = data.alliances.red.team_keys[0].toString().replace("frc", "");
-                document.getElementById("lastRed2").innerHTML = data.alliances.red.team_keys[1].toString().replace("frc", "");
-                document.getElementById("lastRed3").innerHTML = data.alliances.red.team_keys[2].toString().replace("frc", "");
-                
-                document.getElementById("lastBlue1").innerHTML = data.alliances.blue.team_keys[0].toString().replace("frc", "");
-                document.getElementById("lastBlue2").innerHTML = data.alliances.blue.team_keys[1].toString().replace("frc", "");
-                document.getElementById("lastBlue3").innerHTML = data.alliances.blue.team_keys[2].toString().replace("frc", "");
+                var tempTeamNumber = 0; var tempStart = ""; var tempEnd = "";
+                for (var i=0; i<3; i++) {
+                    tempTeamNumber = data.alliances.red.team_keys[i].toString().replace("frc", "");
+                    if (tempTeamNumber == getSetting("teamkey").toString().replace("frc", "")) {
+                        tempStart = "<u><strong>"; tempEnd = "</strong></u>";
+                    } else {
+                        tempStart = ""; tempEnd = "";
+                    }
+                    document.getElementById("lastRed"+(i+1).toString()).innerHTML = tempStart + tempTeamNumber + tempEnd;
+                }
+                for (var i=0; i<3; i++) {
+                    tempTeamNumber = data.alliances.blue.team_keys[i].toString().replace("frc", "");
+                    if (tempTeamNumber == getSetting("teamkey").toString().replace("frc", "")) {
+                        tempStart = "<u><strong>"; tempEnd = "</strong></u>";
+                    } else {
+                        tempStart = ""; tempEnd = "";
+                    }
+                    document.getElementById("lastBlue"+(i+1).toString()).innerHTML = tempStart + tempTeamNumber + tempEnd;
+                }
                 
                 document.getElementById("lastMatchNumber").innerHTML = data.match_number.toString();
                 
@@ -116,13 +128,25 @@ function loadNextMatch(data) {
             url: tbaUrl("/match/"+nextMatchKey+"/simple"),
             dataType: "json",
             success: function(data) {
-                document.getElementById("nextRed1").innerHTML = data.alliances.red.team_keys[0].toString().replace("frc", "");
-                document.getElementById("nextRed2").innerHTML = data.alliances.red.team_keys[1].toString().replace("frc", "");
-                document.getElementById("nextRed3").innerHTML = data.alliances.red.team_keys[2].toString().replace("frc", "");
-                
-                document.getElementById("nextBlue1").innerHTML = data.alliances.blue.team_keys[0].toString().replace("frc", "");
-                document.getElementById("nextBlue2").innerHTML = data.alliances.blue.team_keys[1].toString().replace("frc", "");
-                document.getElementById("nextBlue3").innerHTML = data.alliances.blue.team_keys[2].toString().replace("frc", "");
+                var tempTeamNumber = 0; var tempStart = ""; var tempEnd = "";
+                for (var i=0; i<3; i++) {
+                    tempTeamNumber = data.alliances.red.team_keys[i].toString().replace("frc", "");
+                    if (tempTeamNumber == getSetting("teamkey").toString().replace("frc", "")) {
+                        tempStart = "<u><strong>"; tempEnd = "</strong></u>";
+                    } else {
+                        tempStart = ""; tempEnd = "";
+                    }
+                    document.getElementById("nextRed"+(i+1).toString()).innerHTML = tempStart + tempTeamNumber + tempEnd;
+                }
+                for (var i=0; i<3; i++) {
+                    tempTeamNumber = data.alliances.blue.team_keys[i].toString().replace("frc", "");
+                    if (tempTeamNumber == getSetting("teamkey").toString().replace("frc", "")) {
+                        tempStart = "<u><strong>"; tempEnd = "</strong></u>";
+                    } else {
+                        tempStart = ""; tempEnd = "";
+                    }
+                    document.getElementById("nextBlue"+(i+1).toString()).innerHTML = tempStart + tempTeamNumber + tempEnd;
+                }
                 
                 document.getElementById("nextMatchNumber").innerHTML = data.match_number.toString();
             }
