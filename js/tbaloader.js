@@ -4,9 +4,9 @@ var subNextMatchKey = "2016nytr_qm24";
 
 function doOnLoad() {
     var streamUrl = getSetting("stream");
-    // if (streamUrl != null) {
-    //    $("#streamFrame").src = streamUrl;
-    //}
+    if (streamUrl != null) {
+        document.getElementById("streamFrame").src = streamUrl;
+    }
     doInterval();
 }
 
@@ -39,7 +39,7 @@ function loadTeamRank(data) {
     if (data != null) {
         var qualData = data.qual;
         if (qualData != null) {
-            element.innerHTML = qualData.ranking.toString();
+            element.innerHTML = qualData.ranking.rank.toString();
         } else {
             element.innerHTML = "?";
         }
@@ -54,7 +54,7 @@ function loadTopRanks() {
         success: function(data) {
             var rankData = data.rankings;
             if (data != null) {
-                for (var i=0; (i<8) || (i<rankData.length); i++) {
+                for (var i=0; i<8; i++) {
                     document.getElementById("rankTeam"+(i+1).toString()).innerHTML = rankData[i].team_key.toString().replace("frc", "");
                     if (rankData[i].team_key.toString().replace("frc", "") == "5980") {
                         document.getElementById("rowTeam"+(i+1).toString()).style = "background-color: lightgreen;";
@@ -92,13 +92,9 @@ function loadLastMatch(data) {
                 
                 document.getElementById("lastMatchNumber").innerHTML = data.match_number.toString();
                 
-                var lastTime = new Date(data.time).toTimeString().split(" ")[0];
-                document.getElementById("lastTime").innerHTML = formatTimeShow(parseInt(lastTime.split(":")[0]), lastTime.split(":")[1]);
-                
                 if (data.winning_alliance == "red") {
                     $("#lastWinBlue").addClass("d-none");
                     $("#lastWinRed").removeClass("d-none");
-                    document.getElementById("lastWinBlue").addClass("d-none");
                 } else if (data.winning_alliance == "blue") {
                     $("#lastWinBlue").removeClass("d-none");
                     $("#lastWinRed").addClass("d-none");
@@ -129,10 +125,6 @@ function loadNextMatch(data) {
                 document.getElementById("nextBlue3").innerHTML = data.alliances.blue.team_keys[2].toString().replace("frc", "");
                 
                 document.getElementById("nextMatchNumber").innerHTML = data.match_number.toString();
-                document.getElementById("nextTime").innerHTML = new Date(data.predicted_time).toTimeString().split(" ")[0];
-                
-                var nextTime = new Date(data.predicted_time).toTimeString().split(" ")[0];
-                document.getElementById("nextTime").innerHTML = formatTimeShow(parseInt(nextTime.split(":")[0]), nextTime.split(":")[1]);
             }
         })
     }
