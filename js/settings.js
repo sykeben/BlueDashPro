@@ -15,7 +15,7 @@ settingDB["eventkey"] = "2019misjo";
 // settingDB["eventkey"] = "2018miwmi";
 
 // Stream URL:
-settingDB["stream"] = null;
+settingDB["stream"] = "https://player.twitch.tv/?channel=FIRSTinMI03";
 
 // Don't touch the function below, it retreives settings and passes them to where they're needed:
 function getSetting(settingKey) {
