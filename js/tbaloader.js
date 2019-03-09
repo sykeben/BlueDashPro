@@ -3,9 +3,12 @@ var subLastMatchKey = "2016nytr_qm23";
 var subNextMatchKey = "2016nytr_qm24";
 
 function doOnLoad() {
-    var streamUrl = getSetting("stream");
+    var streamUrl = getSetting("streamurl");
     if (streamUrl != null) {
         document.getElementById("streamFrame").src = streamUrl;
+    }
+    if (getSetting("streambroken")) {
+        document.getElementById("streamFrame").src = "streamerror/broken.html";
     }
     doInterval();
 }
