@@ -18,7 +18,7 @@ settingDB["eventkey"] = "2019misjo";
 settingDB["streamurl"] = "https://player.twitch.tv/?channel=FIRSTinMI03";
 
 // Is the stream broken? (boolean):
-settingDB["streambroken"] = true;
+settingDB["streambroken"] = false;
 
 // Don't touch the function below, it retreives settings and passes them to where they're needed:
 function getSetting(settingKey) {
