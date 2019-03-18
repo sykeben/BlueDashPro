@@ -11,11 +11,11 @@ settingDB["baseurl"] = "https://www.thebluealliance.com/api/v3";
 settingDB["teamkey"] = "frc5980";
 
 // Event key (like "2019wmi" for example):
-settingDB["eventkey"] = "2019misjo";
+settingDB["eventkey"] = "2019miwmi";
 // settingDB["eventkey"] = "2018miwmi";
 
 // Stream URL (null for none):
-settingDB["streamurl"] = "https://player.twitch.tv/?channel=FIRSTinMI03";
+settingDB["streamurl"] = null;
 
 // Is the stream broken? (boolean):
 settingDB["streambroken"] = false;
