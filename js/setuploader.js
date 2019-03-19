@@ -1,5 +1,5 @@
 function loadSetup() {
-	initSetup();
+	initSettings();
     
     if (getSetting("teamkey") != null) document.getElementsByName("input-teamkey")[0].value = getSetting("teamkey").toString();
     if (getSetting("eventkey") != null) document.getElementsByName("input-eventkey")[0].value = getSetting("eventkey").toString();
