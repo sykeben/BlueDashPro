@@ -18,6 +18,7 @@
         
         <div class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="index.html">
+                <img src="img/teamlogo.png" height="32" class="d-inline-block align-center" alt="">
                 <img src="img/logo_small.png" width="32" height="32" class="d-inline-block align-center" alt="">
                 BlueDash Pro
             </a>
@@ -31,19 +32,47 @@
             </ul>
         </div>
         
-        <div class="container-fluid p-5">
+        <div class="container-fluid px-5 pb-5">
             
-            <div>
+            <div class="pt-5">
                 <p class="lead">The below settings can be changed:</p>
                 <div id="unlockedSettings">
-                    Loading...
+                    <table class="table-responsive table-borderless table-sm">
+                        <tbody>
+                            <tr>
+                                <td>Team Key</td>
+                                <td><input name="input-teamkey" type="text" autocomplete="off" /></td>
+                            </tr>
+                            <tr>
+                                <td>Event Key</td>
+                                <td><input name="input-eventkey" type="text" autocomplete="off" /></td>
+                            </tr>
+                            <tr>
+                                <td>Stream URL</td>
+                                <td><input name="input-streamurl" type="url" autocomplete="off" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
+                <button onclick="doSave();" class="btn btn-sm btn-primary">Save</button>
+                <span class="d-inline-block align-middle" id="save-status">Not saved.</span>
             </div>
             
-            <div class="pt-3">
+            <div class="pt-5">
                 <p class="lead">The below settings are preconfigured:</p>
                 <div id="lockedSettings">
-                    Loading...
+                    <table class="table-responsive table-borderless table-sm">
+                        <tbody>
+                            <tr>
+                                <td class="font-weight-bold">API Key</td>
+                                <td id="value-apikey"></td>
+                            </tr>
+                            <tr>
+                                <td class="font-weight-bold">Base URL</td>
+                                <td id="value-baseurl"></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
             
@@ -55,8 +84,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         
         <!-- Custom JS -->
-        <script src="js/legacysettings.js"></script>
-        <script src="js/legacysetuploader.js"></script>
+        <script src="js/settings.js"></script>
+        <script src="js/setuploader.js"></script>
     
     </body>
     

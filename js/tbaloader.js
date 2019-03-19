@@ -4,7 +4,7 @@ var subNextMatchKey = "2016nytr_qm24";
 
 function doOnLoad() {
     var streamUrl = getSetting("streamurl");
-    if (streamUrl != null) {
+    if (streamUrl != null && streamUrl != "[none]") {
         document.getElementById("streamFrame").src = streamUrl;
     }
     if (getSetting("streambroken")) {
