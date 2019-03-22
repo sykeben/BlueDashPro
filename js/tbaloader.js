@@ -29,10 +29,10 @@ function loadEventData() {
         url: tbaUrl("/team/"+getSetting("teamkey")+"/event/"+getSetting("eventkey")+"/status"),
         dataType: "json",
         success: function(data) {
-            loadTeamRank(data);
-            loadTopRanks();
             loadLastMatch(data);
             loadNextMatch(data);
+            loadTeamRank(data);
+            loadTopRanks();
         }
     });
 }
