@@ -10,6 +10,7 @@ function doOnLoad() {
     if (getSetting("streambroken")) {
         document.getElementById("streamFrame").src = "streamerror/broken.html";
     }
+    fixStream();
     doInterval();
 }
 

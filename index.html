@@ -34,8 +34,8 @@
         
         <div class="container-fluid p-5 no-cursor">
             <div class="row">
-                <div class="col-6 pr-5">
-                    <div class="row">
+                <div id="infocol" class="col-6 pr-5">
+                    <div class="row mb-n2">
                         <div class="col-12 p-3 bg-light border rounded">
                             <h4 class="pb-1">Our Last Match</h4>
                             <div class="row">
@@ -78,7 +78,7 @@
                         </div>
                     </div>
                     <div class="row mt-5">
-                        <div class="col-5 p-3 bg-light border rounded">
+                        <div class="col mr-5 p-3 bg-light border rounded">
                             <h4 class="pb-1">Rankings</h4>
                             <table class="table table-striped border table-sm">
                                 <thead>
@@ -124,8 +124,7 @@
                             </table>
                             <h5>Our Rank: <strong><span id="teamRanking">0</span></strong> (Out of 40 teams)</h5>
                         </div>
-                        <div class="col-1"></div>
-                        <div class="col-6 p-3 bg-light border rounded">
+                        <div class="col ml-n2 p-3 bg-light border rounded">
                             <h4 class="pb-1">Our Next Match</h4>
                             <table class="table table-striped border">
                                 <thead>
@@ -155,11 +154,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6">
+                <div id="vidcol" class="col-6">
                     <div class="row">
                         <div class="col-12 p-3 bg-light border rounded">
-                            <h4 class="pb-1">Stream</h4>
-                            <iframe id="streamFrame" src="streamerror/nostream.html" style="display: block; border: none; height: 750px;" class="w-100 rounded force-cursor" scrolling="no"></iframe>
+                            <div id="vidtitle">
+                                <h4 class="pb-1">Stream</h4>
+                            </div>
+                            <iframe id="streamFrame" src="streamerror/nostream.html" style="display: block; border: none;" class="w-100 rounded force-cursor" scrolling="no"></iframe>
                         </div>
                     </div>
                 </div>
@@ -199,6 +200,7 @@
         <script src="js/settings.js"></script>
         <script src="js/tba.js"></script>
         <script src="js/tbaloader.js"></script>
+        <script src="js/style.js"></script>
     
     </body>
     
