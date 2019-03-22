@@ -23,4 +23,31 @@ function doSave() {
     document.getElementById("save-status").innerHTML = "Saved.";
 }
 
+function doTryGetStream() {
+    var eventKey = document.getElementsByName("input-eventkey")[0].value;
+    $.ajax({
+        type: "GET",
+        url: tbaUrl("/event/"+eventKey),
+        dataType: "json",
+        success: function(data) {
+            var webcasts = data.webcasts;
+            var foundcast = false;
+            var newcast = "";
+            for (var i=0; i<webcasts.length; i++) {
+                if (webcasts[i].type == "twitch") {
+                    newcast = "https://player.twitch.tv/?channel=" + webcasts[i].channel.toLowerCase();
+                    foundcast = true;
+                    break;
+                }
+            }
+            if (foundcast) {
+                document.getElementsByName("input-streamurl")[0].value = newcast;
+                document.getElementById("autofetch-status").innerHTML = "Successful.";
+            } else {
+                document.getElementById("autofetch-status").innerHTML = "Failed."
+            }
+        }
+    });
+}
+
 window.onload = initSettings;

@@ -42,14 +42,17 @@
                             <tr>
                                 <td>Team Key</td>
                                 <td><input name="input-teamkey" type="text" autocomplete="off" /></td>
+                                <td><small class="align-top">(Like "frc5980" or "frc4003")</small></td>
                             </tr>
                             <tr>
                                 <td>Event Key</td>
                                 <td><input name="input-eventkey" type="text" autocomplete="off" /></td>
+                                <td><small class="align-top">(Like "2019miwmi")</small></td>
                             </tr>
                             <tr>
                                 <td>Stream URL</td>
                                 <td><input name="input-streamurl" type="url" autocomplete="off" /></td>
+                                <td><button onclick="doTryGetStream();" class="btn btn-sm btn-light px-1 py-0"><small>Attempt Twitch Autofetch</small></button><small><span class="align-middle ml-2" id="autofetch-status"></span></small></td>
                             </tr>
                         </tbody>
                     </table>
@@ -83,7 +86,11 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        
         <!-- Custom JS -->
+        <script src="js/tba.js"></script>
         <script src="js/settings.js"></script>
         <script src="js/setuploader.js"></script>
     
