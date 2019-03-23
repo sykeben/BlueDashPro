@@ -54,11 +54,17 @@
                                 <td><input name="input-streamurl" type="url" autocomplete="off" /></td>
                                 <td><button onclick="doTryGetStream();" class="btn btn-sm btn-light px-1 py-0"><small>Attempt Twitch Autofetch</small></button><small><span class="align-middle ml-2" id="autofetch-status"></span></small></td>
                             </tr>
+                            <tr>
+                                <td>Sponsers</td>
+                                <td><input type="checkbox" id="input-showsponsers" value="showsponsers"> Show</td>
+                                <td></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
                 <button onclick="doSave();" class="btn btn-sm btn-primary">Save</button>
-                <span class="d-inline-block align-middle" id="save-status">Not saved.</span>
+                <span class="d-inline-block align-middle" id="mod-status"></span>
+                <span class="d-inline-block align-middle" id="save-status"></span>
             </div>
             
             <div class="pt-5">

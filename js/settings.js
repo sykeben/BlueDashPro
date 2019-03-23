@@ -20,7 +20,13 @@ function doSave() {
         setSetting("streamurl", document.getElementsByName("input-streamurl")[0].value);
     }
     
-    document.getElementById("save-status").innerHTML = "Saved.";
+    if ($("#input-showsponsers:checked").prop("checked")) {
+        setSetting("showsponsers", 1);
+    } else {
+        setSetting("showsponsers", 0);
+    }
+    
+    document.getElementById("save-status").innerHTML = "saved.";
 }
 
 function doTryGetStream() {
