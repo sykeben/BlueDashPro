@@ -56,15 +56,18 @@
                             </tr>
                             <tr>
                                 <td>Sponsers</td>
-                                <td><input type="checkbox" id="input-showsponsers" value="showsponsers"> Show</td>
-                                <td></td>
+                                <td colspan="2"><input type="checkbox" id="input-showsponsers" value="showsponsers"> Show</td>
                             </tr>
+							<tr>
+								<td colspan="3">
+									<button onclick="doSave();" class="btn btn-sm btn-primary">Save</button>
+									<span class="d-inline-block align-middle" id="mod-status"></span>
+									<span class="d-inline-block align-middle" id="save-status"></span>
+								</td>
+							</tr>
                         </tbody>
                     </table>
                 </div>
-                <button onclick="doSave();" class="btn btn-sm btn-primary">Save</button>
-                <span class="d-inline-block align-middle" id="mod-status"></span>
-                <span class="d-inline-block align-middle" id="save-status"></span>
             </div>
             
             <div class="pt-5">
