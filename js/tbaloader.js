@@ -1,7 +1,3 @@
-var subMatches = false;
-var subLastMatchKey = "2016nytr_qm23";
-var subNextMatchKey = "2016nytr_qm24";
-
 function doOnLoad() {
     var streamUrl = getSetting("streamurl");
     if (streamUrl != null && streamUrl != "[none]") {
@@ -85,11 +81,7 @@ function loadTopRanks() {
 }
 
 function loadLastMatch(data) {
-    if (subMatches) {
-        var lastMatchKey = subLastMatchKey;
-    } else {
-        var lastMatchKey = data.last_match_key;
-    }
+    var lastMatchKey = data.last_match_key;
     if (lastMatchKey != null) {
         $.ajax({
             type: "GET",
@@ -134,11 +126,7 @@ function loadLastMatch(data) {
 }
 
 function loadNextMatch(data) {
-    if (subMatches) {
-        var nextMatchKey = subNextMatchKey;
-    } else {
-        var nextMatchKey = data.next_match_key;
-    }
+    var nextMatchKey = data.next_match_key;
     if (nextMatchKey != null) {
         $.ajax({
             type: "GET",
