@@ -53,12 +53,13 @@
                             </tr>
                             <tr>
                                 <td class="align-top pt-2">Sponsers</td>
-                                <td><input type="checkbox" id="input-showsponsers" value="showsponsers"> Show images from URLs (seperated by new lines):<br>
-                                <textarea id="input-sponserpics" name="input-sponserpics" class="small" cols="80" rows="8"></textarea><br>
-                                <button onclick="loadDefaultPics();" class="btn btn-sm btn-light px-1 py-0"><small>Load Default List</small></button></td>
+                                <td><input type="checkbox" id="input-showsponsers" value="showsponsers"> Show images from URLs (seperated by new lines): <button onclick="loadDefaultPics();" class="d-inline-block align-top btn btn-sm btn-light px-1 py-0"><small>Load Default List</small></button><br>
+                                <textarea id="input-sponserpics" name="input-sponserpics" class="small" cols="80" rows="8"></textarea></td>
                             </tr>
 							<tr>
-								<td colspan="2">
+                                <td>Load/Save</td>
+								<td>
+                                    <button onclick="loadDefaults(true);" class="btn btn-sm btn-secondary">5980 Defaults</button>
 									<button onclick="doSave();" class="btn btn-sm btn-primary">Save</button>
 									<span class="d-inline-block align-middle" id="mod-status"></span>
 									<span class="d-inline-block align-middle" id="save-status"></span>
@@ -101,6 +102,7 @@
         <script src="js/tba.js"></script>
         <script src="js/settings.js"></script>
         <script src="js/setuploader.js"></script>
+        <script src="js/defaults.js"></script>
     
     </body>
     

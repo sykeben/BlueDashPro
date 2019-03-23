@@ -32,11 +32,10 @@ function doSave() {
     document.getElementById("save-status").innerHTML = "Saved.";
 }
 
-function doTryGetStream() {
-    var eventKey = document.getElementsByName("input-eventkey")[0].value;
+function doTryGetStreamCustomEvent(eventkeything, enablechange) {
     $.ajax({
         type: "GET",
-        url: tbaUrl("/event/"+eventKey),
+        url: tbaUrl("/event/"+eventkeything),
         dataType: "json",
         success: function(data) {
             var webcasts = data.webcasts;
@@ -49,14 +48,26 @@ function doTryGetStream() {
                     break;
                 }
             }
-            if (foundcast) {
-                document.getElementsByName("input-streamurl")[0].value = newcast;
-                document.getElementById("autofetch-status").innerHTML = "Successful.";
+            if (enablechange) {
+                if (foundcast) {
+                    document.getElementsByName("input-streamurl")[0].value = newcast;
+                    document.getElementById("autofetch-status").innerHTML = "Successful.";
+                } else {
+                    document.getElementById("autofetch-status").innerHTML = "Failed.";
+                }
             } else {
-                document.getElementById("autofetch-status").innerHTML = "Failed."
+                if (foundcast) {
+                    setSetting("streamurl", newcast);
+                } else {
+                    setSetting("streamurl", "[none]");
+                }
             }
         }
     });
+}
+
+function doTryGetStream() {
+    doTryGetStreamCustomEvent(document.getElementsByName("input-eventkey")[0].value, true);
 }
 
 window.onload = initSettings;

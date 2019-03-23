@@ -1,4 +1,9 @@
 function doOnLoad() {
+    if (getSetting("configured") != 1) {
+        setSetting("configured", 1);
+        loadDefaults(false);
+        window.location.reload();
+    }
     var streamUrl = getSetting("streamurl");
     if (streamUrl != null && streamUrl != "[none]") {
         document.getElementById("streamFrame").src = streamUrl;
