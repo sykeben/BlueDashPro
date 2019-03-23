@@ -8,7 +8,7 @@ function loadSetup() {
     }
     if (getSetting("showsponsers") == 1) $("#input-showsponsers").prop("checked", true);
     
-    document.getElementById("value-apikey").innerHTML = getSetting("apikey");
+    document.getElementById("value-apikey").innerHTML = "<i>Hidden.</i>";
     document.getElementById("value-baseurl").innerHTML = getSetting("baseurl");
 }
 
