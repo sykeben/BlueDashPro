@@ -1,9 +1,9 @@
 {
-    eventkey: "2019miwmi",
-    teamkey: "frc5980",
-    streamurl: "[auto]",
-    showsponsers: 1,
-    sponserpics: [
+    "eventkey": "2019miwmi",
+    "teamkey": "frc5980",
+    "streamurl": "[auto]",
+    "showsponsers": 1,
+    "sponserpics": [
         "https://github.com/sykeben/BlueDashPro/raw/master/img/sponsers/1.png",
         "https://github.com/sykeben/BlueDashPro/raw/master/img/sponsers/2.png",
         "https://github.com/sykeben/BlueDashPro/raw/master/img/sponsers/3.png",
