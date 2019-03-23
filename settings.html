@@ -41,25 +41,24 @@
                         <tbody>
                             <tr>
                                 <td>Team Key</td>
-                                <td><input name="input-teamkey" type="text" autocomplete="off" /></td>
-                                <td><small class="align-top">(Like "frc5980" or "frc4003")</small></td>
+                                <td colspan="2"><input name="input-teamkey" type="text" autocomplete="off" /> <small class="align-middle pb-2">(Like "frc5980" or "frc4003")</small></td>
                             </tr>
                             <tr>
                                 <td>Event Key</td>
-                                <td><input name="input-eventkey" type="text" autocomplete="off" /></td>
-                                <td><small class="align-top">(Like "2019miwmi")</small></td>
+                                <td><input name="input-eventkey" type="text" autocomplete="off" /> <small class="align-middle pb-2">(Like "2019miwmi")</small></td>
                             </tr>
                             <tr>
                                 <td>Stream URL</td>
-                                <td><input name="input-streamurl" type="url" autocomplete="off" /></td>
-                                <td><button onclick="doTryGetStream();" class="btn btn-sm btn-light px-1 py-0"><small>Attempt Twitch Autofetch</small></button><small><span class="align-middle ml-2" id="autofetch-status"></span></small></td>
+                                <td><input name="input-streamurl" type="url" autocomplete="off" /> <button onclick="doTryGetStream();" class="btn btn-sm btn-light px-1 py-0"><small>Attempt Twitch Autofetch</small></button> <small><span class="align-middle" id="autofetch-status"></span></small></td>
                             </tr>
                             <tr>
-                                <td>Sponsers</td>
-                                <td colspan="2"><input type="checkbox" id="input-showsponsers" value="showsponsers"> Show</td>
+                                <td class="align-top pt-2">Sponsers</td>
+                                <td><input type="checkbox" id="input-showsponsers" value="showsponsers"> Show images from URLs (seperated by new lines):<br>
+                                <textarea id="input-sponserpics" name="input-sponserpics" class="small" cols="80" rows="8"></textarea><br>
+                                <button onclick="loadDefaultPics();" class="btn btn-sm btn-light px-1 py-0"><small>Load Default List</small></button></td>
                             </tr>
 							<tr>
-								<td colspan="3">
+								<td colspan="2">
 									<button onclick="doSave();" class="btn btn-sm btn-primary">Save</button>
 									<span class="d-inline-block align-middle" id="mod-status"></span>
 									<span class="d-inline-block align-middle" id="save-status"></span>

@@ -10,10 +10,18 @@ function doOnLoad() {
     fixStream();
     doInterval();
     loadRankTotal();
+    loadSponserPics();
 }
 
 function doInterval() {
     loadEventData();
+}
+
+function loadSponserPics() {
+    var newpics = JSON.parse(getSetting("sponserpics"));
+    for (var i=0; i<newpics.length; i++) {
+        document.getElementById("sponmarq").innerHTML += "<img src=\"" + newpics[i] + "\" height=\"90px\" class=\"pl-5\">";
+    }
 }
 
 function loadRankTotal() {

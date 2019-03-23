@@ -26,7 +26,10 @@ function doSave() {
         setSetting("showsponsers", 0);
     }
     
-    document.getElementById("save-status").innerHTML = "saved.";
+    var sponserpics = document.getElementsByName("input-sponserpics")[0].value.split("\n");
+    setSetting("sponserpics", JSON.stringify(sponserpics));
+    
+    document.getElementById("save-status").innerHTML = "Saved.";
 }
 
 function doTryGetStream() {
