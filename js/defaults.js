@@ -26,9 +26,11 @@ function loadDefaults(loadsetup) {
     } else {
         setSetting("streamurl", defaults["showsponsers"]);
     }
-    doSave();
-    if (loadsetup) loadSetup();
-    doSave();
+    if (loadsetup) {
+        doSave();   
+        loadSetup();
+        doSave();
+    }
 }
 
 function clearSetup() {

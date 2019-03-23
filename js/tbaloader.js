@@ -2,7 +2,8 @@ function doOnLoad() {
     if (getSetting("configured") != 1) {
         setSetting("configured", 1);
         loadDefaults(false);
-        window.location.reload();
+        var delayedReload = function() { window.location.reload(); clearInterval(delayedReload); };
+        setInterval(delayedReload, 3000);
     }
     var streamUrl = getSetting("streamurl");
     if (streamUrl != null && streamUrl != "[none]") {
