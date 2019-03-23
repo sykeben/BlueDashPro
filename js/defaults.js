@@ -30,3 +30,13 @@ function loadDefaults(loadsetup) {
     if (loadsetup) loadSetup();
     doSave();
 }
+
+function clearSetup() {
+    document.getElementsByName("input-teamkey")[0].value = "";
+    document.getElementsByName("input-eventkey")[0].value = "";
+    document.getElementsByName("input-streamurl")[0].value = "";
+    document.getElementsByName("input-sponserpics")[0].value = "";
+    $("#input-showsponsers:checked").prop("checked", false);
+    doSave();
+    loadSetup();
+}
