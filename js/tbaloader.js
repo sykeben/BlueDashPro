@@ -12,10 +12,22 @@ function doOnLoad() {
     }
     fixStream();
     doInterval();
+    loadRankTotal();
 }
 
 function doInterval() {
     loadEventData();
+}
+
+function loadRankTotal() {
+    $.ajax({
+        type: "GET",
+        url: tbaUrl("/event/"+getSetting("eventkey")+"/teams/keys"),
+        dataType: "json",
+        success: function(data) {
+            document.getElementById("rankTotal").innerHTML = data.length;
+        }
+    });
 }
 
 function formatTimeShow(h_24, m) {
