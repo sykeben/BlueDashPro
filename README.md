@@ -1,7 +1,7 @@
 # BlueDashPro
 New, working, and rewritten version of [BlueDash](https://github.com/sykeben/BlueDash).   
 
-An even newer version is being worked on, [BlueDashProII](https://github.com/sykben/BlueDashProII).
+An even newer version is being worked on, [BlueDashProII](https://github.com/sykeben/BlueDashProII).
 
 <br>
 
